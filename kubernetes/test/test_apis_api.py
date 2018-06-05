@@ -35,7 +35,6 @@ class TestApisApi(unittest.TestCase):
         """
         Test case for get_api_versions
 
-        
         """
         pass
 

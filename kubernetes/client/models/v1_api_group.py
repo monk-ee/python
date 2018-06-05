@@ -166,29 +166,29 @@ class V1APIGroup(object):
         self._preferred_version = preferred_version
 
     @property
-    def server_address_by_client_cid_rs(self):
+    def server_address_by_client_cidrs(self):
         """
-        Gets the server_address_by_client_cid_rs of this V1APIGroup.
+        Gets the server_address_by_client_cidrs of this V1APIGroup.
         a map of client CIDR to server address that is serving this group. This is to help clients reach servers in the most network-efficient way possible. Clients can use the appropriate server address as per the CIDR that they match. In case of multiple matches, clients should use the longest matching CIDR. The server returns only those CIDRs that it thinks that the client can match. For example: the master will return an internal IP CIDR only, if the client reaches the server using an internal IP. Server looks at X-Forwarded-For header or X-Real-Ip header or request.RemoteAddr (in that order) to get the client IP.
 
-        :return: The server_address_by_client_cid_rs of this V1APIGroup.
+        :return: The server_address_by_client_cidrs of this V1APIGroup.
         :rtype: list[V1ServerAddressByClientCIDR]
         """
-        return self._server_address_by_client_cid_rs
+        return self._server_address_by_client_cidrs
 
-    @server_address_by_client_cid_rs.setter
-    def server_address_by_client_cid_rs(self, server_address_by_client_cid_rs):
+    @server_address_by_client_cidrs.setter
+    def server_address_by_client_cidrs(self, server_address_by_client_cidrs):
         """
-        Sets the server_address_by_client_cid_rs of this V1APIGroup.
+        Sets the server_address_by_client_cidrs of this V1APIGroup.
         a map of client CIDR to server address that is serving this group. This is to help clients reach servers in the most network-efficient way possible. Clients can use the appropriate server address as per the CIDR that they match. In case of multiple matches, clients should use the longest matching CIDR. The server returns only those CIDRs that it thinks that the client can match. For example: the master will return an internal IP CIDR only, if the client reaches the server using an internal IP. Server looks at X-Forwarded-For header or X-Real-Ip header or request.RemoteAddr (in that order) to get the client IP.
 
-        :param server_address_by_client_cid_rs: The server_address_by_client_cid_rs of this V1APIGroup.
+        :param server_address_by_client_cidrs: The server_address_by_client_cidrs of this V1APIGroup.
         :type: list[V1ServerAddressByClientCIDR]
         """
-        if server_address_by_client_cid_rs is None:
-            raise ValueError("Invalid value for `server_address_by_client_cid_rs`, must not be `None`")
+        if server_address_by_client_cidrs is None:
+            raise ValueError("Invalid value for `server_address_by_client_cidrs`, must not be `None`")
 
-        self._server_address_by_client_cid_rs = server_address_by_client_cid_rs
+        self._server_address_by_client_cidrs = server_address_by_client_cidrs
 
     @property
     def versions(self):
